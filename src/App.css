@@ -12,7 +12,20 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'Geometria';
+  src: local('Geometria Regular'), local('Geometria-Regular'),
+    url('./assets/Geometria-Regular.woff2') format('woff2'),
+    url('./assets/Geometria-Regular.woff') format('woff'),
+    url('./assets/Geometria-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+body {
+  font-family: 'Geometria';
 }
