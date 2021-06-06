@@ -4,13 +4,6 @@
 - Выполнить npm install -g serve.
 - Выполнить serve -s build
 
-Чтобы развернуть приложение нужно 
-Далее установить зависимости с помозью npm install.
-Далее создать build версию с помощью команды npm run build.
-После этого выполнить эти 2 команды:
-npm install -g serve
-serve -s build
-
 
 ## Available Scripts
 
