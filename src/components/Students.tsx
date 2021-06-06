@@ -4,17 +4,22 @@ import ratingStar from '../assets/ratingStar.svg';
 import listPoint from '../assets/ListPoint.svg';
 import styled from 'styled-components';
 
+import { observer } from 'mobx-react';
+import store from '../store';
+
 interface students {
+  id: number;
   avatar: string;
   name: string;
   specialty: string;
   group: string;
   color: string;
-  rating: string;
+  rating: number;
   birthday: string;
 }
 
 const Students: React.FC<students> = ({
+  id,
   avatar,
   name,
   specialty,
@@ -84,7 +89,7 @@ const Students: React.FC<students> = ({
         {rating}
       </StudentRating>
       <StudentColor style={{ background: layoutColor }}></StudentColor>
-      <DeleteButton src={deleteIcon} />
+      <DeleteButton src={deleteIcon} onClick={() => store.deleteStudent(id)} />
     </StudentWrapper>
   );
 };
@@ -242,4 +247,4 @@ const DeleteButton = styled.img`
   }
 `;
 
-export default Students;
+export default observer(Students);
