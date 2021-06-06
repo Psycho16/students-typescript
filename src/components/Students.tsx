@@ -28,11 +28,15 @@ const Students: React.FC<students> = ({
   rating,
   birthday,
 }) => {
-  const specialties = ['mt', 'kb', 'kn'];
-  const rusSpecialties = ['Математика', 'Компьютерная безопасность', 'Компьютерные науки'];
-  const rusGroups = ['МТ', 'КБ', 'КН'];
-  const colors = ['green', 'blue', 'red', 'black', 'yellow', 'orange'];
-  const layoutColors = ['#83C872', '#49C2E8', '#E25B5B', '#000000', '#F7FB53', '#EFA638'];
+  const specialties: string[] = ['mt', 'kb', 'kn'];
+  const rusSpecialties: string[] = [
+    'Математика',
+    'Компьютерная безопасность',
+    'Компьютерные науки',
+  ];
+  const rusGroups: string[] = ['МТ', 'КБ', 'КН'];
+  const colors: string[] = ['green', 'blue', 'red', 'black', 'yellow', 'orange'];
+  const layoutColors: string[] = ['#83C872', '#49C2E8', '#E25B5B', '#000000', '#F7FB53', '#EFA638'];
 
   //функции
   function getRusSpecialty(specialty: string): string {
@@ -40,19 +44,17 @@ const Students: React.FC<students> = ({
   }
 
   function getRusGroup(group: string): string {
-    const [abbr, num] = group.split('-');
+    const [abbr, num]: string[] = group.split('-');
     return `${rusGroups[specialties.indexOf(abbr)]}-${num}`;
   }
 
   function getAge(birthday: string): number {
     //   день рождения в формате Год-месяц-день
-    const year = birthday.split('-')[0];
-    const month = birthday.split('-')[1];
-    const day = birthday.split('-')[2];
+    const [year, month, day]: string[] = birthday.split('-');
     const today: Date = new Date(); // сегодняшняя дата
     const dateBirthday: Date = new Date(+year, +month, +day); // дата рождения в формате Date
-    let age = today.getFullYear() - dateBirthday.getFullYear();
-    const m = today.getMonth() - (dateBirthday.getMonth() - 1); // вычитаем, т.к. в JSе отсчет месяцев начинается с 0
+    let age: number = today.getFullYear() - dateBirthday.getFullYear();
+    const m: number = today.getMonth() - (dateBirthday.getMonth() - 1); // вычитаем, т.к. в JSе отсчет месяцев начинается с 0
 
     return m < 0 || (m === 0 && today.getDate() < dateBirthday.getDate()) ? --age : age;
   }
@@ -62,10 +64,10 @@ const Students: React.FC<students> = ({
   }
 
   // переменные для вывода
-  const rusSpecialty = getRusSpecialty(specialty);
-  const rusGroup = getRusGroup(group);
-  const age = getAge(birthday);
-  const layoutColor = getLayoutColor(color);
+  const rusSpecialty: string = getRusSpecialty(specialty);
+  const rusGroup: string = getRusGroup(group);
+  const age: number = getAge(birthday);
+  const layoutColor: string = getLayoutColor(color);
 
   return (
     <StudentWrapper>

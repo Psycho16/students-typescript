@@ -9,8 +9,8 @@ interface sortPopup {
 }
 
 const SortPopup: React.FC<sortPopup> = ({ items }) => {
-  const [visiblePopup, setVisiblePopup] = React.useState(false);
-  const [activeItem, setActiveItem] = React.useState(0);
+  const [visiblePopup, setVisiblePopup] = React.useState<boolean>(false);
+  const [activeItem, setActiveItem] = React.useState<number>(0);
   function toggleVisiblePopup() {
     setVisiblePopup(!visiblePopup);
   }
@@ -26,7 +26,7 @@ const SortPopup: React.FC<sortPopup> = ({ items }) => {
         <SortPop>
           <SortUl>
             {items
-              ? items.map((name, index) => (
+              ? items.map((name: string, index: number) => (
                   <SortLi
                     key={name}
                     onClick={() => {

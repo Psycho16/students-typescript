@@ -5,22 +5,32 @@ import { Students, Header, Search } from './components/';
 import { observer } from 'mobx-react';
 import store from './store';
 
+interface student {
+  id: number;
+  email: string;
+  name: string;
+  sex: string;
+  specialty: string;
+  group: string;
+  color: string;
+  rating: number;
+  birthday: string;
+  avatar: string;
+}
+
 const App: React.FC = () => {
   function getAge(birthday: string): number {
     //   день рождения в формате Год-месяц-день
-    // const [year, month, day] = birthday.split('-');
-    const year = birthday.split('-')[0];
-    const month = birthday.split('-')[1];
-    const day = birthday.split('-')[2];
+    const [year, month, day]: string[] = birthday.split('-');
     const today: Date = new Date(); // сегодняшняя дата
     const dateBirthday: Date = new Date(+year, +month, +day); // дата рождения в формате Date
-    let age = today.getFullYear() - dateBirthday.getFullYear();
-    const m = today.getMonth() - (dateBirthday.getMonth() - 1); // вычитаем, т.к. в JSе отсчет месяцев начинается с 0
+    let age: number = today.getFullYear() - dateBirthday.getFullYear();
+    const m: number = today.getMonth() - (dateBirthday.getMonth() - 1); // вычитаем, т.к. в JSе отсчет месяцев начинается с 0
 
     return m < 0 || (m === 0 && today.getDate() < dateBirthday.getDate()) ? --age : age;
   }
 
-  function sortBy(a: any, b: any, type: string) {
+  function sortBy(a: student, b: student, type: string): number {
     switch (type) {
       case 'Имя А-Я':
         return a.name.localeCompare(b.name);
@@ -35,7 +45,7 @@ const App: React.FC = () => {
       case 'Высокий рейтинг':
         return b.rating - a.rating;
       default:
-        return;
+        return 0;
     }
   }
   const onLoad = () => {
