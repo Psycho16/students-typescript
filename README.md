@@ -1,4 +1,10 @@
-Чтобы развернуть приложение нужно клонировать репозиторий с помощью git clone https://github.com/PsychoXgod/students-typescript.git .
+## deploy
+- Клонировать репозиторий с помощью git clone https://github.com/PsychoXgod/students-typescript.git .
+- Создать build версию с помощью команды npm run build.
+- Выполнить npm install -g serve.
+- Выполнить serve -s build
+
+Чтобы развернуть приложение нужно 
 Далее установить зависимости с помозью npm install.
 Далее создать build версию с помощью команды npm run build.
 После этого выполнить эти 2 команды:
