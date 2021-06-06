@@ -46,7 +46,6 @@ const Students: React.FC<students> = ({
 
   function getAge(birthday: string): number {
     //   день рождения в формате Год-месяц-день
-    // const [year, month, day] = birthday.split('-');
     const year = birthday.split('-')[0];
     const month = birthday.split('-')[1];
     const day = birthday.split('-')[2];
@@ -134,7 +133,7 @@ const StudentAvatar = styled.img`
   margin-right: 3.4%;
   @media ${(props) => props.theme.media.phone} {
     grid-area: avatar;
-    width: 60px;
+    width: 40px;
   }
 `;
 const StudentName = styled.h1`
@@ -143,7 +142,6 @@ const StudentName = styled.h1`
   line-height: 20px;
   width: 24.5%;
   margin-right: 3.4%;
-  /* text-align: start; */
   @media ${(props) => props.theme.media.phone} {
     grid-area: name;
     font-size: 15px;
@@ -239,7 +237,6 @@ const DeleteButton = styled.img`
   background: #ffffff;
   box-shadow: 0px 0px 16.3715px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  /* border-radius: 10px; */
   @media ${(props) => props.theme.media.phone} {
     grid-area: del;
     width: 15px;
