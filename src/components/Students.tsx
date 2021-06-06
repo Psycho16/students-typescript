@@ -4,7 +4,7 @@ import ratingStar from '../assets/ratingStar.svg';
 import listPoint from '../assets/ListPoint.svg';
 import styled from 'styled-components';
 
-interface Students {
+interface students {
   avatar: string;
   name: string;
   specialty: string;
@@ -12,10 +12,9 @@ interface Students {
   color: string;
   rating: string;
   birthday: string;
-  id: string;
 }
 
-const Students: React.FC<Students> = ({
+const Students: React.FC<students> = ({
   avatar,
   name,
   specialty,
@@ -23,7 +22,6 @@ const Students: React.FC<Students> = ({
   color,
   rating,
   birthday,
-  id,
 }) => {
   const specialties = ['mt', 'kb', 'kn'];
   const rusSpecialties = ['Математика', 'Компьютерная безопасность', 'Компьютерные науки'];

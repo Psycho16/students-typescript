@@ -1,11 +1,21 @@
 import React from 'react';
-import { SearchForm } from './index';
+import { SearchForm, SortPopup } from './index';
 import styled from 'styled-components';
 
 const Search: React.FC = () => {
   return (
     <SearchWrapper>
       <SearchForm />
+      <SortPopup
+        items={[
+          'Имя А-Я',
+          'Имя Я-А',
+          'Сначала моложе',
+          'Сначала старше',
+          'Высокий рейтинг',
+          'Низкий рейтинг',
+        ]}
+      />
     </SearchWrapper>
   );
 };

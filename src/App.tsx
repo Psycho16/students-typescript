@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.css';
 import styled from 'styled-components';
-import { Students, Header } from './components/';
+import { Students, Header, Search } from './components/';
 
 const App: React.FC = () => {
   const [students, setStudents] = React.useState<any[]>([]);
-  console.log(students);
 
   React.useEffect(() => {
     fetch('https://front-assignment-api.2tapp.cc/api/persons')
@@ -19,7 +18,7 @@ const App: React.FC = () => {
       <Header />
       <MainContent>
         <AppTitle>Студенты</AppTitle>
-        {/* <Search /> */}
+        <Search />
         <StudentWrapper>
           <StudentName>ФИО</StudentName>
           <StudentSpecialty>Специальность</StudentSpecialty>
