@@ -1,6 +1,8 @@
 import React from 'react';
 import sort from '../assets/sort.svg';
 import styled from 'styled-components';
+import { observer } from 'mobx-react';
+import store from '../store';
 
 interface sortPopup {
   items: string[];
@@ -29,6 +31,7 @@ const SortPopup: React.FC<sortPopup> = ({ items }) => {
                     key={name}
                     onClick={() => {
                       setActiveItem(index);
+                      store.sortType = items[index];
                     }}
                   >
                     {name}
@@ -48,6 +51,9 @@ const Sort = styled.div`
   box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
   border-radius: 6px;
   width: 15%;
+  @media ${(props) => props.theme.media.phone} {
+    position: static;
+  }
 `;
 const SortLabel = styled.div`
   display: flex;
@@ -57,7 +63,7 @@ const SortLabel = styled.div`
   height: 48px;
   @media ${(props) => props.theme.media.phone} {
     width: 100%;
-    padding-right: 0;
+    padding: 0;
   }
 `;
 const SortSpan = styled.span`
@@ -84,11 +90,23 @@ const SortPop = styled.div`
   border-radius: 10px;
   overflow: hidden;
   width: 160px;
+  @media ${(props) => props.theme.media.phone} {
+    top: 28%;
+    left: 10%;
+    width: 80%;
+    height: 450px;
+    display: flex;
+    align-items: center;
+  }
 `;
 const SortUl = styled.ul`
   overflow: hidden;
   font-size: 12px;
   line-height: 15px;
+  @media ${(props) => props.theme.media.phone} {
+    width: 100%;
+    height: 450px;
+  }
 `;
 const SortLi = styled.li`
   width: 100%;
@@ -102,6 +120,10 @@ const SortLi = styled.li`
     background: rgba(73, 194, 232, 0.11);
     border-radius: 5px;
   }
+  @media ${(props) => props.theme.media.phone} {
+    padding: 31px 40px;
+    font-size: 18px;
+  }
 `;
 
-export default SortPopup;
+export default observer(SortPopup);
