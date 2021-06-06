@@ -31,7 +31,7 @@ const SortPopup: React.FC<sortPopup> = ({ items }) => {
                     key={name}
                     onClick={() => {
                       setActiveItem(index);
-                      store.sortType = items[index];
+                      store.setSortType(items[index]);
                     }}
                   >
                     {name}

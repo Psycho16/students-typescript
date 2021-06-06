@@ -23,13 +23,13 @@ const SearchForm: React.FC = () => {
 
 const FormSearch = styled.form`
   position: relative;
-  width: 83%;
+  width: 980px;
   height: 48px;
   margin-right: 20px;
   box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
   border-radius: 6px;
   @media ${(props) => props.theme.media.phone} {
-    width: 63%;
+    width: 266px;
   }
 `;
 const SearchBar = styled.input`
