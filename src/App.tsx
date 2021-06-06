@@ -2,17 +2,53 @@ import React from 'react';
 import './App.css';
 import styled from 'styled-components';
 import { Students, Header, Search } from './components/';
+import { observer } from 'mobx-react';
+import store from './store';
 
 const App: React.FC = () => {
-  const [students, setStudents] = React.useState<any[]>([]);
+  function getAge(birthday: string): number {
+    //   день рождения в формате Год-месяц-день
+    // const [year, month, day] = birthday.split('-');
+    const year = birthday.split('-')[0];
+    const month = birthday.split('-')[1];
+    const day = birthday.split('-')[2];
+    const today: Date = new Date(); // сегодняшняя дата
+    const dateBirthday: Date = new Date(+year, +month, +day); // дата рождения в формате Date
+    let age = today.getFullYear() - dateBirthday.getFullYear();
+    const m = today.getMonth() - (dateBirthday.getMonth() - 1); // вычитаем, т.к. в JSе отсчет месяцев начинается с 0
 
-  React.useEffect(() => {
+    return m < 0 || (m === 0 && today.getDate() < dateBirthday.getDate()) ? --age : age;
+  }
+
+  function sortBy(a: any, b: any, type: string) {
+    switch (type) {
+      case 'Имя А-Я':
+        return a.name.localeCompare(b.name);
+      case 'Имя Я-А':
+        return b.name.localeCompare(a.name);
+      case 'Сначала моложе':
+        return getAge(a.birthday) - getAge(b.birthday);
+      case 'Сначала старше':
+        return getAge(b.birthday) - getAge(a.birthday);
+      case 'Низкий рейтинг':
+        return a.rating - b.rating;
+      case 'Высокий рейтинг':
+        return b.rating - a.rating;
+      default:
+        return;
+    }
+  }
+  const onLoad = () => {
     fetch('https://front-assignment-api.2tapp.cc/api/persons')
       .then((resp) => resp.json())
       .then((json) => {
-        setStudents(json.students);
+        store.getStudents(json.students);
       });
+  };
+  React.useEffect(() => {
+    onLoad();
   }, []);
+
   return (
     <div className="App">
       <Header />
@@ -27,12 +63,17 @@ const App: React.FC = () => {
           <StudentRating>Рейтинг</StudentRating>
         </StudentWrapper>
         <MainStudentsWrapper>
-          {students && students.map((student) => <Students key={student.id} {...student} />)}
+          {store.students &&
+            store.students
+              .filter((student) => student.name.toLowerCase().includes(store.input.toLowerCase()))
+              .sort((a, b) => sortBy(a, b, store.sortType))
+              .map((student) => <Students key={student.id} {...student} />)}
         </MainStudentsWrapper>
       </MainContent>
     </div>
   );
 };
+
 const AppTitle = styled.h1`
   color: ${(props) => props.theme.colors.primary};
   text-align: start;
@@ -110,4 +151,4 @@ const StudentRating = styled.h2`
   width: 6.8%;
   margin-right: 3.4%;
 `;
-export default App;
+export default observer(App);
