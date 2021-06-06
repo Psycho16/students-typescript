@@ -2,16 +2,24 @@ import React from 'react';
 import styled from 'styled-components';
 import searchIcon from '../assets/search.svg';
 
-function SearchForm() {
+import { observer } from 'mobx-react';
+import store from '../store';
+
+const SearchForm: React.FC = () => {
   return (
     <>
       <FormSearch>
-        <SearchBar type="text" placeholder="Поиск по имени" />
+        <SearchBar
+          type="text"
+          placeholder="Поиск по имени"
+          value={store.input}
+          onChange={(e) => store.setInput(e.target.value)}
+        />
         <SearchIcon src={searchIcon} />
       </FormSearch>
     </>
   );
-}
+};
 
 const FormSearch = styled.form`
   position: relative;
@@ -27,16 +35,12 @@ const FormSearch = styled.form`
 const SearchBar = styled.input`
   width: 100%;
   height: 45px;
-  /* padding: 0 0 0 55px; */
   padding-left: 55px;
   border: 1px solid transparent;
   opacity: 0.3;
   :focus {
     border: 1px solid ${(props) => props.theme.colors.primary};
     outline: none;
-  }
-  @media ${(props) => props.theme.media.phone} {
-    /* width: 266px; */
   }
 `;
 const SearchIcon = styled.img`
@@ -46,4 +50,4 @@ const SearchIcon = styled.img`
   left: 20px;
 `;
 
-export default SearchForm;
+export default observer(SearchForm);
