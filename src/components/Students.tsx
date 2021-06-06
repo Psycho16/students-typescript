@@ -38,32 +38,31 @@ const Students: React.FC<students> = ({
   const colors: string[] = ['green', 'blue', 'red', 'black', 'yellow', 'orange'];
   const layoutColors: string[] = ['#83C872', '#49C2E8', '#E25B5B', '#000000', '#F7FB53', '#EFA638'];
 
-  //функции
+  // получаем специальность на русском языке
   function getRusSpecialty(specialty: string): string {
     return rusSpecialties[specialties.indexOf(specialty)];
   }
-
+  // получаем группу на русском языке
   function getRusGroup(group: string): string {
     const [abbr, num]: string[] = group.split('-');
     return `${rusGroups[specialties.indexOf(abbr)]}-${num}`;
   }
-
+  // Получаем возраст из даты рождения
   function getAge(birthday: string): number {
-    //   день рождения в формате Год-месяц-день
     const [year, month, day]: string[] = birthday.split('-');
-    const today: Date = new Date(); // сегодняшняя дата
-    const dateBirthday: Date = new Date(+year, +month, +day); // дата рождения в формате Date
+    const today: Date = new Date();
+    const dateBirthday: Date = new Date(+year, +month, +day);
     let age: number = today.getFullYear() - dateBirthday.getFullYear();
     const m: number = today.getMonth() - (dateBirthday.getMonth() - 1); // вычитаем, т.к. в JSе отсчет месяцев начинается с 0
 
     return m < 0 || (m === 0 && today.getDate() < dateBirthday.getDate()) ? --age : age;
   }
-
+  // смена цвета на тот, который был в макете
   function getLayoutColor(color: string): string {
     return layoutColors[colors.indexOf(color)];
   }
 
-  // переменные для вывода
+  // переменные для вывода на страницу
   const rusSpecialty: string = getRusSpecialty(specialty);
   const rusGroup: string = getRusGroup(group);
   const age: number = getAge(birthday);

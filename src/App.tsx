@@ -19,11 +19,11 @@ interface student {
 }
 
 const App: React.FC = () => {
+  // Получаем возраст из даты рождения
   function getAge(birthday: string): number {
-    //   день рождения в формате Год-месяц-день
     const [year, month, day]: string[] = birthday.split('-');
-    const today: Date = new Date(); // сегодняшняя дата
-    const dateBirthday: Date = new Date(+year, +month, +day); // дата рождения в формате Date
+    const today: Date = new Date();
+    const dateBirthday: Date = new Date(+year, +month, +day);
     let age: number = today.getFullYear() - dateBirthday.getFullYear();
     const m: number = today.getMonth() - (dateBirthday.getMonth() - 1); // вычитаем, т.к. в JSе отсчет месяцев начинается с 0
 
