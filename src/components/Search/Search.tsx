@@ -1,6 +1,6 @@
 import React from 'react';
-import { SearchForm, SortPopup } from './index';
-import styled from 'styled-components';
+import { SearchForm, SortPopup } from '../index';
+import { SearchWrapper } from './StyledSearch';
 
 const Search: React.FC = () => {
   return (
@@ -19,9 +19,5 @@ const Search: React.FC = () => {
     </SearchWrapper>
   );
 };
-const SearchWrapper = styled.div`
-  display: flex;
-  margin-bottom: 36px;
-`;
 
 export default Search;

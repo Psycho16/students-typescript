@@ -1,26 +1,13 @@
-import React from 'react';
-import dbLogo from '../assets/dbLogo.svg';
 import styled from 'styled-components';
 
-const Header: React.FC = () => {
-  return (
-    <HeaderContainer>
-      <LogoDB src={dbLogo} alt="logo doubletapp" />
-      <StyledTitle>
-        Students <StyledSpan>by PsychoXgod</StyledSpan>
-      </StyledTitle>
-    </HeaderContainer>
-  );
-};
-
-const StyledSpan = styled.span`
+export const StyledSpan = styled.span`
   display: inline;
   text-transform: lowercase;
   @media ${(props) => props.theme.media.phone} {
     display: none;
   }
 `;
-const HeaderContainer = styled.div`
+export const HeaderContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -33,7 +20,7 @@ const HeaderContainer = styled.div`
     padding: 22px 30px;
   }
 `;
-const LogoDB = styled.img`
+export const LogoDB = styled.img`
   width: 42px;
   height: 42px;
   margin-right: 45px;
@@ -41,7 +28,7 @@ const LogoDB = styled.img`
     margin-right: 26px;
   }
 `;
-const StyledTitle = styled.h1`
+export const StyledTitle = styled.h1`
   font-size: 20px;
   line-height: 44px;
   text-transform: uppercase;
@@ -52,5 +39,3 @@ const StyledTitle = styled.h1`
     line-height: 44px;
   }
 `;
-
-export default Header;
