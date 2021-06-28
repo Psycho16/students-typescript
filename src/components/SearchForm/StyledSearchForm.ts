@@ -13,13 +13,27 @@ export const FormSearch = styled.form`
 `;
 export const SearchBar = styled.input`
   width: 100%;
-  height: 45px;
+  height: 48px;
   padding-left: 55px;
   border: 1px solid transparent;
-  opacity: 0.3;
+  opacity: 0.5;
+  font-size: 16px;
+  line-height: 20px;
   :focus {
-    border: 1px solid ${(props) => props.theme.colors.primary};
     outline: none;
+    font-size: 17px;
+    opacity: 1;
+  }
+  :focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+  /* Firefox < 19 */
+  :focus::-moz-placeholder {
+    color: transparent;
+  }
+  /* Firefox > 19 */
+  :focus::-moz-placeholder {
+    color: transparent;
   }
 `;
 export const SearchIcon = styled.img`
