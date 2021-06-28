@@ -34,12 +34,11 @@ export const StudentAvatar = styled.img`
   border: 2px solid rgba(255, 255, 255, 0.6);
   box-sizing: border-box;
   border-radius: 300px;
-  width: 3.4%;
+  width: 40px;
   height: 40px;
   margin-right: 3.4%;
   @media ${(props) => props.theme.media.phone} {
     grid-area: avatar;
-    width: 40px;
   }
 `;
 export const StudentName = styled.h1`
