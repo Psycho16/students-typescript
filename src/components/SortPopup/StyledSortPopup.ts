@@ -11,6 +11,7 @@ export const Sort = styled.div`
 export const SortLabel = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-around;
   padding-right: 17px;
   padding-left: 20px;
   height: 48px;
@@ -42,7 +43,8 @@ export const SortPop = styled.div`
   box-shadow: 0px 5px 15px rgb(0 0 0 / 9%);
   border-radius: 10px;
   overflow: hidden;
-  width: 160px;
+  width: 100%;
+  text-align: start;
   @media ${(props) => props.theme.media.phone} {
     top: 28%;
     left: 10%;
