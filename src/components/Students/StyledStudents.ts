@@ -9,25 +9,15 @@ export const StudentWrapper = styled.div`
   padding-right: 17px;
   margin-bottom: 25px;
   @media ${(props) => props.theme.media.phone} {
-    display: grid;
-    grid-template-areas:
-      ' avatar name name del '
-      ' avatar color rating . '
-      ' . . . . '
-      ' . years years years '
-      ' . spec spec spec '
-      ' . group group group'
-      ' . . . . ';
-    grid-template-columns: 67px 20px repeat(2, 123px);
-    grid-template-rows: repeat(7, 20px);
-    column-gap: 10px;
-    row-gap: 5px;
+    position: relative;
     width: 100%;
     height: 170px;
+    flex-wrap: wrap;
     margin-bottom: 10px;
     box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
     border-radius: 6px;
-    padding: 20px;
+    padding: 0;
+    align-content: flex-start;
   }
 `;
 export const StudentAvatar = styled.img`
@@ -38,7 +28,10 @@ export const StudentAvatar = styled.img`
   height: 40px;
   margin-right: 3.4%;
   @media ${(props) => props.theme.media.phone} {
-    grid-area: avatar;
+    margin-right: 20px;
+    align-self: flex-start;
+    margin-top: 16px;
+    margin-left: 16px;
   }
 `;
 export const StudentName = styled.h1`
@@ -48,10 +41,23 @@ export const StudentName = styled.h1`
   width: 24.5%;
   margin-right: 3.4%;
   @media ${(props) => props.theme.media.phone} {
-    grid-area: name;
     font-size: 15px;
-    width: 100%;
+    height: 20px;
+    width: calc(86% - 70px);
     line-height: 20px;
+    align-self: flex-start;
+    margin-top: 16px;
+  }
+`;
+export const SeparatingLine = styled.span`
+  display: none;
+  @media ${(props) => props.theme.media.phone} {
+    width: 100%;
+    opacity: 0.05;
+    margin-top: 14px;
+    border: 1px solid #000000;
+    display: inline-block;
+    margin-bottom: 15px;
   }
 `;
 export const StudentSpecialty = styled.h2`
@@ -61,10 +67,15 @@ export const StudentSpecialty = styled.h2`
   width: 23.7%;
   margin-right: 3.4%;
   @media ${(props) => props.theme.media.phone} {
-    grid-area: spec;
+    display: flex;
+    align-items: center;
+    order: 4;
+    margin-left: 77px;
     width: 100%;
     font-size: 12px;
     line-height: 15px;
+    margin-bottom: 5px;
+    height: 20px;
   }
 `;
 export const StudentGroup = styled.h2`
@@ -74,10 +85,15 @@ export const StudentGroup = styled.h2`
   width: 6.8%;
   margin-right: 5%;
   @media ${(props) => props.theme.media.phone} {
-    grid-area: group;
+    display: flex;
+    align-items: center;
+    order: 4;
+    margin-left: 77px;
     width: 100%;
     font-size: 12px;
     line-height: 15px;
+    margin-bottom: 5px;
+    height: 20px;
   }
 `;
 export const StudentAge = styled.h2`
@@ -87,23 +103,40 @@ export const StudentAge = styled.h2`
   width: 6.8%;
   margin-right: 5%;
   @media ${(props) => props.theme.media.phone} {
-    grid-area: years;
+    display: flex;
+    align-items: center;
+    order: 4;
+    margin-left: 77px;
     width: 100%;
     font-size: 12px;
     line-height: 15px;
+    height: 20px;
+  }
+`;
+export const StudentRatingAndColor = styled.div`
+  display: flex;
+  margin-right: 20px;
+  @media ${(props) => props.theme.media.phone} {
+    align-items: center;
+    position: absolute;
+    top: 39px;
+    left: 77px;
   }
 `;
 export const StudentRating = styled.div`
   font-weight: 500;
   font-size: 15px;
   line-height: 20px;
-  width: 6.8%;
-  margin-right: 3.4%;
+  width: 100px;
+  margin-right: 20px;
   @media ${(props) => props.theme.media.phone} {
-    grid-area: rating;
-    width: 100%;
+    display: flex;
+    order: 3;
+    align-items: baseline;
+    margin-top: 1px;
     font-size: 12px;
     line-height: 15px;
+    height: 12px;
   }
 `;
 export const RatingStar = styled.img`
@@ -124,6 +157,15 @@ export const ListPoint = styled.img`
     margin-right: 13px;
   }
 `;
+export const AgeWord = styled.span`
+  display: none;
+  @media ${(props) => props.theme.media.phone} {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 15px;
+    margin-left: 5px;
+  }
+`;
 export const StudentColor = styled.h1`
   box-sizing: border-box;
   border-radius: 300px;
@@ -131,9 +173,10 @@ export const StudentColor = styled.h1`
   height: 30px;
   margin-right: 30px;
   @media ${(props) => props.theme.media.phone} {
-    grid-area: color;
-    width: 15px;
-    height: 15px;
+    order: 2;
+    width: 12px;
+    height: 12px;
+    margin-right: 13px;
   }
 `;
 export const DeleteButton = styled.img`
@@ -143,8 +186,11 @@ export const DeleteButton = styled.img`
   box-shadow: 0px 0px 16.3715px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   @media ${(props) => props.theme.media.phone} {
-    grid-area: del;
+    order: 2;
     width: 15px;
     height: 15px;
+    position: absolute;
+    right: 26px;
+    top: 24px;
   }
 `;

@@ -6,12 +6,15 @@ import {
   StudentWrapper,
   StudentAvatar,
   StudentName,
+  SeparatingLine,
   StudentSpecialty,
   StudentGroup,
   StudentAge,
+  StudentRatingAndColor,
   StudentRating,
   RatingStar,
   ListPoint,
+  AgeWord,
   StudentColor,
   DeleteButton,
 } from './StyledStudents';
@@ -74,16 +77,26 @@ const Students: React.FC<students> = ({
     return layoutColors[colors.indexOf(color)];
   }
 
+  function plural(number: number) {
+    const titles: string[] = ['год', 'года', 'лет'];
+    const cases: number[] = [2, 0, 1, 1, 1, 2];
+    return titles[
+      number % 100 > 4 && number % 100 < 20 ? 2 : cases[number % 10 < 5 ? number % 10 : 5]
+    ];
+  }
+
   // переменные для вывода на страницу
   const rusSpecialty: string = getRusSpecialty(specialty);
   const rusGroup: string = getRusGroup(group);
   const age: number = getAge(birthday);
   const layoutColor: string = getLayoutColor(color);
+  const ageWord = plural(age);
 
   return (
     <StudentWrapper>
       <StudentAvatar alt="student" src={avatar} />
       <StudentName>{name}</StudentName>
+      <SeparatingLine />
       <StudentSpecialty>
         <ListPoint src={listPoint} />
         {rusSpecialty}
@@ -95,12 +108,16 @@ const Students: React.FC<students> = ({
       <StudentAge>
         <ListPoint src={listPoint} />
         {age}
+        <AgeWord>{ageWord}</AgeWord>
       </StudentAge>
-      <StudentRating>
-        <RatingStar src={ratingStar} />
-        {rating}
-      </StudentRating>
-      <StudentColor style={{ background: layoutColor }}></StudentColor>
+      <StudentRatingAndColor>
+        <StudentRating>
+          <RatingStar src={ratingStar} />
+          {rating}
+        </StudentRating>
+        <StudentColor style={{ background: layoutColor }}></StudentColor>
+      </StudentRatingAndColor>
+
       <DeleteButton src={deleteIcon} onClick={() => store.deleteStudent(id)} />
     </StudentWrapper>
   );
