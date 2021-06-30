@@ -14,6 +14,7 @@ export const SortLabel = styled.div`
   justify-content: space-around;
   padding-right: 17px;
   padding-left: 20px;
+  width: 180px;
   height: 48px;
   @media ${(props) => props.theme.media.phone} {
     width: 100%;
@@ -46,12 +47,13 @@ export const SortPop = styled.div`
   width: 100%;
   text-align: start;
   @media ${(props) => props.theme.media.phone} {
-    top: 28%;
+    top: 36%;
     left: 10%;
     width: 80%;
     height: 450px;
     display: flex;
     align-items: center;
+    z-index: 1;
   }
 `;
 export const SortUl = styled.ul`
@@ -78,5 +80,6 @@ export const SortLi = styled.li`
   @media ${(props) => props.theme.media.phone} {
     padding: 31px 40px;
     font-size: 18px;
+    /* background-color: #fff; */
   }
 `;

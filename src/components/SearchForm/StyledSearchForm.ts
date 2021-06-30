@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const FormSearch = styled.form`
   position: relative;
-  width: 86%;
+  width: calc(100% - 200px);
   height: 48px;
   margin-right: 20px;
   box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);

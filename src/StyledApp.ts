@@ -15,6 +15,8 @@ export const AppTitle = styled.h1`
 `;
 export const MainContent = styled.div`
   padding: 0 130px;
+  width: 1440px;
+  margin: 0 auto;
   @media ${(props) => props.theme.media.phone} {
     padding: 0 20px;
   }
@@ -34,7 +36,6 @@ export const StudentWrapper = styled.div`
   align-items: center;
   text-align: start;
   padding-right: 17px;
-  padding-left: 6.7%;
   margin-bottom: 12px;
   @media ${(props) => props.theme.media.phone} {
     display: none;
@@ -44,30 +45,31 @@ export const StudentName = styled.h1`
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-  width: 24.5%;
-  margin-right: 4.8%;
+  width: 100px;
+  margin-left: 80px;
+  margin-right: 220px;
   /* text-align: start; */
 `;
 export const StudentSpecialty = styled.h2`
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-  width: 23.7%;
-  margin-right: 4.4%;
+  width: 132px;
+  margin-right: 165px;
 `;
 export const StudentGroup = styled.h2`
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-  width: 6.8%;
-  margin-right: 5.7%;
+  width: 100px;
+  margin-right: 43px;
 `;
 export const StudentAge = styled.h2`
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-  width: 6.8%;
-  margin-right: 5.7%;
+  width: 100px;
+  margin-right: 40px;
 `;
 export const StudentRating = styled.h2`
   font-weight: 500;

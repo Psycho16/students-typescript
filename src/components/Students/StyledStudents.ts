@@ -26,7 +26,7 @@ export const StudentAvatar = styled.img`
   border-radius: 300px;
   width: 40px;
   height: 40px;
-  margin-right: 3.4%;
+  margin-right: 20px;
   @media ${(props) => props.theme.media.phone} {
     margin-right: 20px;
     align-self: flex-start;
@@ -38,8 +38,8 @@ export const StudentName = styled.h1`
   font-weight: 500;
   font-size: 15px;
   line-height: 20px;
-  width: 24.5%;
-  margin-right: 3.4%;
+  width: 300px;
+  margin-right: 20px;
   @media ${(props) => props.theme.media.phone} {
     font-size: 15px;
     height: 20px;
@@ -47,6 +47,9 @@ export const StudentName = styled.h1`
     line-height: 20px;
     align-self: flex-start;
     margin-top: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 `;
 export const SeparatingLine = styled.span`
@@ -64,8 +67,8 @@ export const StudentSpecialty = styled.h2`
   font-weight: 500;
   font-size: 15px;
   line-height: 20px;
-  width: 23.7%;
-  margin-right: 3.4%;
+  width: 280px;
+  margin-right: 20px;
   @media ${(props) => props.theme.media.phone} {
     display: flex;
     align-items: center;
@@ -82,8 +85,8 @@ export const StudentGroup = styled.h2`
   font-weight: 500;
   font-size: 15px;
   line-height: 20px;
-  width: 6.8%;
-  margin-right: 5%;
+  width: 88px;
+  margin-right: 53px;
   @media ${(props) => props.theme.media.phone} {
     display: flex;
     align-items: center;
@@ -100,8 +103,8 @@ export const StudentAge = styled.h2`
   font-weight: 500;
   font-size: 15px;
   line-height: 20px;
-  width: 6.8%;
-  margin-right: 5%;
+  width: 80px;
+  margin-right: 60px;
   @media ${(props) => props.theme.media.phone} {
     display: flex;
     align-items: center;
@@ -116,6 +119,7 @@ export const StudentAge = styled.h2`
 export const StudentRatingAndColor = styled.div`
   display: flex;
   margin-right: 20px;
+  width: 132px;
   @media ${(props) => props.theme.media.phone} {
     align-items: center;
     position: absolute;
@@ -127,8 +131,8 @@ export const StudentRating = styled.div`
   font-weight: 500;
   font-size: 15px;
   line-height: 20px;
-  width: 100px;
-  margin-right: 20px;
+  width: 80px;
+  margin-right: 22px;
   @media ${(props) => props.theme.media.phone} {
     display: flex;
     order: 3;
@@ -171,7 +175,6 @@ export const StudentColor = styled.h1`
   border-radius: 300px;
   width: 30px;
   height: 30px;
-  margin-right: 30px;
   @media ${(props) => props.theme.media.phone} {
     order: 2;
     width: 12px;
