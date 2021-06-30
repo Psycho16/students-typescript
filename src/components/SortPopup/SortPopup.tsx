@@ -1,6 +1,15 @@
 import React from 'react';
 import sort from './sort.svg';
-import { Sort, SortLabel, SortSpan, SortLogo, SortPop, SortUl, SortLi } from './StyledSortPopup';
+import {
+  Sort,
+  SortLabel,
+  SortSpan,
+  SortLogo,
+  SortPop,
+  SortUl,
+  SortLi,
+  SortLi1,
+} from './StyledSortPopup';
 import { observer } from 'mobx-react';
 import store from '../../store';
 
@@ -26,17 +35,29 @@ const SortPopup: React.FC<sortPopup> = ({ items }) => {
         <SortPop>
           <SortUl>
             {items
-              ? items.map((name: string, index: number) => (
-                  <SortLi
-                    key={name}
-                    onClick={() => {
-                      setActiveItem(index);
-                      store.setSortType(items[index]);
-                    }}
-                  >
-                    {name}
-                  </SortLi>
-                ))
+              ? items.map((name: string, index: number) =>
+                  index === activeItem ? (
+                    <SortLi1
+                      key={name}
+                      onClick={() => {
+                        setActiveItem(index);
+                        store.setSortType(items[index]);
+                      }}
+                    >
+                      {name}
+                    </SortLi1>
+                  ) : (
+                    <SortLi
+                      key={name}
+                      onClick={() => {
+                        setActiveItem(index);
+                        store.setSortType(items[index]);
+                      }}
+                    >
+                      {name}
+                    </SortLi>
+                  ),
+                )
               : ''}
           </SortUl>
         </SortPop>

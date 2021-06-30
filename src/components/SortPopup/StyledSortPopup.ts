@@ -45,7 +45,9 @@ export const SortPop = styled.div`
   border-radius: 10px;
   overflow: hidden;
   width: 100%;
+  height: 246px;
   text-align: start;
+  padding-top: 8px;
   @media ${(props) => props.theme.media.phone} {
     top: 36%;
     left: 10%;
@@ -61,12 +63,19 @@ export const SortUl = styled.ul`
   font-size: 12px;
   line-height: 15px;
   @media ${(props) => props.theme.media.phone} {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
     width: 100%;
     height: 450px;
   }
 `;
 export const SortLi = styled.li`
-  width: 100%;
+  width: 169px;
+  height: 35px;
+  margin: 0 auto;
+  margin-bottom: 4px;
   padding: 12px 20px;
   cursor: pointer;
   font-size: 12px;
@@ -74,12 +83,40 @@ export const SortLi = styled.li`
   list-style-type: none;
   :active,
   :hover {
-    background: rgba(73, 194, 232, 0.11);
+    background: rgba(73, 194, 232, 0.5);
     border-radius: 5px;
   }
   @media ${(props) => props.theme.media.phone} {
-    padding: 31px 40px;
+    padding: 20px 11px;
+    margin-bottom: 0;
+    height: 55px;
     font-size: 18px;
-    /* background-color: #fff; */
+    width: 88%;
+  }
+`;
+
+export const SortLi1 = styled.li`
+  width: 169px;
+  height: 35px;
+  margin: 0 auto;
+  margin-bottom: 4px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 15px;
+  list-style-type: none;
+  background: rgba(73, 194, 232, 0.11);
+  border-radius: 5px;
+  :active,
+  :hover {
+    background: rgba(73, 194, 232, 0.5);
+    border-radius: 5px;
+  }
+  @media ${(props) => props.theme.media.phone} {
+    padding: 20px 11px;
+    margin-bottom: 0;
+    height: 55px;
+    font-size: 18px;
+    width: 88%;
   }
 `;

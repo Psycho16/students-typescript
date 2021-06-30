@@ -18,6 +18,7 @@ export const MainContent = styled.div`
   width: 1440px;
   margin: 0 auto;
   @media ${(props) => props.theme.media.phone} {
+    width: auto;
     padding: 0 20px;
   }
 `;
@@ -48,7 +49,6 @@ export const StudentName = styled.h1`
   width: 100px;
   margin-left: 80px;
   margin-right: 220px;
-  /* text-align: start; */
 `;
 export const StudentSpecialty = styled.h2`
   font-weight: 500;

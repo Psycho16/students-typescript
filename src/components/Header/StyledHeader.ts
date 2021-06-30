@@ -8,16 +8,25 @@ export const StyledSpan = styled.span`
   }
 `;
 export const HeaderContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   background: #ffffff;
   box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
   margin-bottom: 75px;
   padding: 22px 130px;
+  padding: 22px 0;
   @media ${(props) => props.theme.media.phone} {
     margin-bottom: 39px;
     padding: 22px 30px;
+  }
+`;
+export const TitleAndLogo = styled.div`
+  display: flex;
+  width: 1440px;
+  margin: 0 auto;
+  padding: 0 130px;
+  @media ${(props) => props.theme.media.phone} {
+    width: auto;
+    margin: 0;
+    padding: 0;
   }
 `;
 export const LogoDB = styled.img`
