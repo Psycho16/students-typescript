@@ -107,6 +107,10 @@ export const SortLi1 = styled.li`
   list-style-type: none;
   background: rgba(73, 194, 232, 0.11);
   border-radius: 5px;
+  background-image: url('./path.png');
+  background-repeat: no-repeat;
+  background-position: 87% center;
+  background-size: 10px;
   :active,
   :hover {
     background: rgba(73, 194, 232, 0.5);
