@@ -1,5 +1,4 @@
 import React from 'react';
-import deleteIcon from './deleteIcon.svg';
 import ratingStar from './ratingStar.svg';
 import listPoint from './ListPoint.svg';
 import {
@@ -118,7 +117,7 @@ const Students: React.FC<students> = ({
         <StudentColor style={{ background: layoutColor }}></StudentColor>
       </StudentRatingAndColor>
 
-      <DeleteButton src={deleteIcon} onClick={() => store.deleteStudent(id)} />
+      <DeleteButton onClick={() => store.deleteStudent(id)} />
     </StudentWrapper>
   );
 };

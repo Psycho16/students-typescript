@@ -10,6 +10,7 @@ export const StudentWrapper = styled.div`
   margin-bottom: 25px;
   @media ${(props) => props.theme.media.phone} {
     position: relative;
+    min-width: 100%;
     width: 100%;
     height: 170px;
     flex-wrap: wrap;
@@ -24,6 +25,7 @@ export const StudentAvatar = styled.img`
   border: 2px solid rgba(255, 255, 255, 0.6);
   box-sizing: border-box;
   border-radius: 300px;
+  min-width: 40px;
   width: 40px;
   height: 40px;
   margin-right: 20px;
@@ -38,12 +40,14 @@ export const StudentName = styled.h1`
   font-weight: 500;
   font-size: 15px;
   line-height: 20px;
+  min-width: 300px;
   width: 300px;
   margin-right: 20px;
   @media ${(props) => props.theme.media.phone} {
     font-size: 15px;
     height: 20px;
-    width: calc(86% - 70px);
+    min-width: calc(74% - 70px);
+    width: calc(74% - 70px);
     line-height: 20px;
     align-self: flex-start;
     margin-top: 16px;
@@ -67,6 +71,7 @@ export const StudentSpecialty = styled.h2`
   font-weight: 500;
   font-size: 15px;
   line-height: 20px;
+  min-width: 280px;
   width: 280px;
   margin-right: 20px;
   @media ${(props) => props.theme.media.phone} {
@@ -74,6 +79,7 @@ export const StudentSpecialty = styled.h2`
     align-items: center;
     order: 4;
     margin-left: 77px;
+    min-width: 100%;
     width: 100%;
     font-size: 12px;
     line-height: 15px;
@@ -85,6 +91,7 @@ export const StudentGroup = styled.h2`
   font-weight: 500;
   font-size: 15px;
   line-height: 20px;
+  min-width: 88px;
   width: 88px;
   margin-right: 53px;
   @media ${(props) => props.theme.media.phone} {
@@ -92,6 +99,7 @@ export const StudentGroup = styled.h2`
     align-items: center;
     order: 4;
     margin-left: 77px;
+    min-width: 100%;
     width: 100%;
     font-size: 12px;
     line-height: 15px;
@@ -103,6 +111,7 @@ export const StudentAge = styled.h2`
   font-weight: 500;
   font-size: 15px;
   line-height: 20px;
+  min-width: 80px;
   width: 80px;
   margin-right: 60px;
   @media ${(props) => props.theme.media.phone} {
@@ -110,6 +119,7 @@ export const StudentAge = styled.h2`
     align-items: center;
     order: 4;
     margin-left: 77px;
+    min-width: 100%;
     width: 100%;
     font-size: 12px;
     line-height: 15px;
@@ -119,6 +129,7 @@ export const StudentAge = styled.h2`
 export const StudentRatingAndColor = styled.div`
   display: flex;
   margin-right: 20px;
+  min-width: 132px;
   width: 132px;
   @media ${(props) => props.theme.media.phone} {
     align-items: center;
@@ -173,27 +184,33 @@ export const AgeWord = styled.span`
 export const StudentColor = styled.h1`
   box-sizing: border-box;
   border-radius: 300px;
+  min-width: 30px;
   width: 30px;
   height: 30px;
   @media ${(props) => props.theme.media.phone} {
     order: 2;
+    min-width: 12px;
     width: 12px;
     height: 12px;
     margin-right: 13px;
   }
 `;
-export const DeleteButton = styled.img`
-  width: 14px;
-  height: 14px;
+export const DeleteButton = styled.div`
+  min-width: 30px;
+  width: 30px;
+  height: 30px;
   background: #ffffff;
   box-shadow: 0px 0px 16.3715px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  background-image: url('./group.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 14px;
+  border-radius: 17px;
   @media ${(props) => props.theme.media.phone} {
     order: 2;
-    width: 15px;
-    height: 15px;
     position: absolute;
     right: 26px;
-    top: 24px;
+    top: 15px;
   }
 `;
