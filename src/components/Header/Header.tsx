@@ -1,6 +1,13 @@
 import React from 'react';
 import dbLogo from './dbLogo.svg';
-import { HeaderContainer, LogoDB, StyledTitle, StyledSpan, TitleAndLogo } from './StyledHeader';
+import {
+  HeaderContainer,
+  LogoDB,
+  StyledTitle,
+  StyledSpan,
+  SpanBy,
+  TitleAndLogo,
+} from './StyledHeader';
 
 const Header: React.FC = () => {
   return (
@@ -8,7 +15,8 @@ const Header: React.FC = () => {
       <TitleAndLogo>
         <LogoDB src={dbLogo} alt="logo doubletapp" />
         <StyledTitle>
-          Students <StyledSpan>by PsychoXgod</StyledSpan>
+          Students <SpanBy>by</SpanBy>
+          <StyledSpan> PsychoXgod</StyledSpan>
         </StyledTitle>
       </TitleAndLogo>
     </HeaderContainer>

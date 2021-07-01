@@ -1,8 +1,14 @@
 import styled from 'styled-components';
 
 export const StyledSpan = styled.span`
-  display: inline;
-  text-transform: lowercase;
+  text-transform: none;
+  color: rgb(73, 194, 232);
+  @media ${(props) => props.theme.media.phone} {
+    display: none;
+  }
+`;
+export const SpanBy = styled.span`
+  text-transform: none;
   @media ${(props) => props.theme.media.phone} {
     display: none;
   }
