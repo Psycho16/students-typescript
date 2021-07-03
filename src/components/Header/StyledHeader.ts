@@ -17,8 +17,15 @@ export const HeaderContainer = styled.div`
   background: #ffffff;
   box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
   margin-bottom: 75px;
-  padding: 22px 130px;
   padding: 22px 0;
+  @media ${(props) => props.theme.media.medium} {
+    margin-bottom: 62px;
+    padding: 18px 0;
+  }
+  @media ${(props) => props.theme.media.small} {
+    margin-bottom: 52px;
+    padding: 15px 0;
+  }
   @media ${(props) => props.theme.media.phone} {
     margin-bottom: 39px;
     padding: 22px 30px;
@@ -29,6 +36,14 @@ export const TitleAndLogo = styled.div`
   width: 1440px;
   margin: 0 auto;
   padding: 0 130px;
+  @media ${(props) => props.theme.media.medium} {
+    width: 1000px;
+    padding: 0px 54px;
+  }
+  @media ${(props) => props.theme.media.small} {
+    width: 600px;
+    padding: 0px 28px;
+  }
   @media ${(props) => props.theme.media.phone} {
     width: auto;
     margin: 0;

@@ -4,6 +4,12 @@ export const Sort = styled.div`
   box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
   border-radius: 6px;
   width: 15%;
+  @media ${(props) => props.theme.media.medium} {
+    width: 20%;
+  }
+  @media ${(props) => props.theme.media.small} {
+    width: 25%;
+  }
   @media ${(props) => props.theme.media.phone} {
     position: static;
   }
@@ -16,6 +22,12 @@ export const SortLabel = styled.div`
   padding-left: 20px;
   width: 180px;
   height: 48px;
+  @media ${(props) => props.theme.media.small} {
+    height: 32px;
+    width: 152px;
+    padding-right: 20px;
+    padding-left: 16px;
+  }
   @media ${(props) => props.theme.media.phone} {
     width: 100%;
     padding: 0;
@@ -27,6 +39,11 @@ export const SortSpan = styled.span`
   line-height: 15px;
   width: 105px;
   cursor: pointer;
+  @media ${(props) => props.theme.media.small} {
+    text-align: start;
+    font-size: 11px;
+    margin-right: 12px;
+  }
   @media ${(props) => props.theme.media.phone} {
     display: none;
   }
@@ -86,6 +103,11 @@ export const SortLi = styled.li`
     background: rgba(73, 194, 232, 0.5);
     border-radius: 5px;
   }
+  @media ${(props) => props.theme.media.small} {
+    font-size: 10px;
+    width: 94%;
+    padding: 12px 11px;
+  }
   @media ${(props) => props.theme.media.phone} {
     padding: 20px 11px;
     margin-bottom: 0;
@@ -116,11 +138,17 @@ export const SortLi1 = styled.li`
     background: rgba(73, 194, 232, 0.5);
     border-radius: 5px;
   }
+  @media ${(props) => props.theme.media.small} {
+    font-size: 10px;
+    width: 94%;
+    padding: 12px 11px;
+  }
   @media ${(props) => props.theme.media.phone} {
     padding: 20px 11px;
     margin-bottom: 0;
     height: 55px;
     font-size: 18px;
     width: 88%;
+    background-size: 15px;
   }
 `;

@@ -7,6 +7,10 @@ export const FormSearch = styled.form`
   margin-right: 20px;
   box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
   border-radius: 6px;
+  @media ${(props) => props.theme.media.small} {
+    height: 32px;
+    width: calc(100% - 158px);
+  }
   @media ${(props) => props.theme.media.phone} {
     width: 78%;
   }
@@ -34,6 +38,10 @@ export const SearchBar = styled.input`
   /* Firefox > 19 */
   :focus::-moz-placeholder {
     color: transparent;
+  }
+  @media ${(props) => props.theme.media.small} {
+    height: 32px;
+    font-size: 12px;
   }
 `;
 export const SearchIcon = styled.img`

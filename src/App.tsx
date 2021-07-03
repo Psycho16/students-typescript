@@ -11,7 +11,7 @@ import {
   StudentAge,
   StudentRating,
 } from './StyledApp';
-import { Students, Header, Search } from './components/';
+import { Students, Search } from './components/';
 
 import { observer } from 'mobx-react';
 import store from './store';
@@ -72,7 +72,6 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <Header />
       <MainContent>
         <AppTitle>Студенты</AppTitle>
         <Search />

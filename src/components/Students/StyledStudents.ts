@@ -29,6 +29,9 @@ export const StudentAvatar = styled.img`
   width: 40px;
   height: 40px;
   margin-right: 20px;
+  @media ${(props) => props.theme.media.small} {
+    margin-right: 10px;
+  }
   @media ${(props) => props.theme.media.phone} {
     margin-right: 20px;
     align-self: flex-start;
@@ -43,6 +46,17 @@ export const StudentName = styled.h1`
   min-width: 300px;
   width: 300px;
   margin-right: 20px;
+  @media ${(props) => props.theme.media.medium} {
+    font-size: 13px;
+    min-width: 165px;
+    width: 165px;
+  }
+  @media ${(props) => props.theme.media.small} {
+    font-size: 11px;
+    min-width: 61px;
+    width: 61px;
+    margin-right: 7px;
+  }
   @media ${(props) => props.theme.media.phone} {
     font-size: 15px;
     height: 20px;
@@ -74,6 +88,17 @@ export const StudentSpecialty = styled.h2`
   min-width: 280px;
   width: 280px;
   margin-right: 20px;
+  @media ${(props) => props.theme.media.medium} {
+    font-size: 13px;
+    min-width: 200px;
+    width: 200px;
+  }
+  @media ${(props) => props.theme.media.small} {
+    font-size: 11px;
+    min-width: 116px;
+    width: 116px;
+    margin-right: 9px;
+  }
   @media ${(props) => props.theme.media.phone} {
     display: flex;
     align-items: center;
@@ -94,6 +119,16 @@ export const StudentGroup = styled.h2`
   min-width: 88px;
   width: 88px;
   margin-right: 53px;
+  @media ${(props) => props.theme.media.medium} {
+    font-size: 13px;
+    margin-right: 33px;
+  }
+  @media ${(props) => props.theme.media.small} {
+    font-size: 11px;
+    min-width: 53px;
+    width: 53px;
+    margin-right: 30px;
+  }
   @media ${(props) => props.theme.media.phone} {
     display: flex;
     align-items: center;
@@ -114,6 +149,16 @@ export const StudentAge = styled.h2`
   min-width: 80px;
   width: 80px;
   margin-right: 60px;
+  @media ${(props) => props.theme.media.medium} {
+    font-size: 13px;
+    width: 65px;
+    min-width: 65px;
+    margin-right: 40px;
+  }
+  @media ${(props) => props.theme.media.small} {
+    font-size: 11px;
+    margin-right: 15px;
+  }
   @media ${(props) => props.theme.media.phone} {
     display: flex;
     align-items: center;
@@ -131,6 +176,16 @@ export const StudentRatingAndColor = styled.div`
   margin-right: 20px;
   min-width: 132px;
   width: 132px;
+  align-items: center;
+  @media ${(props) => props.theme.media.medium} {
+    min-width: 110px;
+    width: 110px;
+  }
+  @media ${(props) => props.theme.media.small} {
+    font-size: 11px;
+    min-width: 60px;
+    width: 60px;
+  }
   @media ${(props) => props.theme.media.phone} {
     align-items: center;
     position: absolute;
@@ -144,6 +199,14 @@ export const StudentRating = styled.div`
   line-height: 20px;
   width: 80px;
   margin-right: 22px;
+  @media ${(props) => props.theme.media.medium} {
+    font-size: 13px;
+    width: 59px;
+  }
+  @media ${(props) => props.theme.media.small} {
+    font-size: 11px;
+    width: 30px;
+  }
   @media ${(props) => props.theme.media.phone} {
     display: flex;
     order: 3;
@@ -187,6 +250,11 @@ export const StudentColor = styled.h1`
   min-width: 30px;
   width: 30px;
   height: 30px;
+  @media ${(props) => props.theme.media.small} {
+    min-width: 22px;
+    width: 22px;
+    height: 22px;
+  }
   @media ${(props) => props.theme.media.phone} {
     order: 2;
     min-width: 12px;
@@ -207,6 +275,12 @@ export const DeleteButton = styled.div`
   background-position: center center;
   background-size: 14px;
   border-radius: 17px;
+  @media ${(props) => props.theme.media.small} {
+    min-width: 22px;
+    width: 22px;
+    height: 22px;
+    background-size: 11px;
+  }
   @media ${(props) => props.theme.media.phone} {
     order: 2;
     position: absolute;
