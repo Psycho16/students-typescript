@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { Header } from './components/index';
+import AddStudent from './pages/AddStudent';
 import reportWebVitals from './reportWebVitals';
 import 'styled-components';
 import { DefaultTheme, ThemeProvider } from 'styled-components';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
@@ -36,8 +38,14 @@ const theme: DefaultTheme = {
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <Header />
-      <App />
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route exact path="/AddStudent" component={AddStudent} />
+        </Switch>
+        {/* <App /> */}
+      </Router>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root'),
