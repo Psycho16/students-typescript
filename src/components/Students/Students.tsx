@@ -54,19 +54,21 @@ const Students: React.FC<students> = ({
     'Компьютерные науки',
   ];
   const rusGroups: string[] = ['МТ', 'КБ', 'КН'];
-  const layoutColors = new Map();
-  layoutColors.set('green', '#83C872');
-  layoutColors.set('blue', '#49C2E8');
-  layoutColors.set('red', '#E25B5B');
-  layoutColors.set('black', '#000000');
-  layoutColors.set('yellow', '#F7FB53');
-  layoutColors.set('orange', '#EFA637');
+
+  const layoutColors: any = {
+    green: '#83C872',
+    blue: '#49C2E8',
+    red: '#E25B5B',
+    black: '#000000',
+    yellow: '#F7FB53',
+    orange: '#EFA637',
+  };
 
   // переменные для вывода на страницу
   const rusSpecialty: string = getRusSpecialty(specialty, rusSpecialties, specialties);
   const rusGroup: string = getRusGroup(group, rusGroups, specialties);
   const age: number = getAgeFromBirthday(birthday);
-  const layoutColor: string = layoutColors.get(color);
+  const layoutColor: string = layoutColors[color];
   const ageWord = fixAgeWord(age);
 
   return (
