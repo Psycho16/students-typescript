@@ -7,7 +7,7 @@ import AddStudent from './pages/AddStudent';
 import reportWebVitals from './reportWebVitals';
 import 'styled-components';
 import { DefaultTheme, ThemeProvider } from 'styled-components';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
@@ -44,7 +44,6 @@ ReactDOM.render(
           <Route exact path="/" component={App} />
           <Route exact path="/AddStudent" component={AddStudent} />
         </Switch>
-        {/* <App /> */}
       </Router>
     </ThemeProvider>
   </React.StrictMode>,
