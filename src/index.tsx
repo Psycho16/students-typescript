@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { Header } from './components/index';
-import AddStudent from './pages/AddStudent';
+import AddStudent from './pages/AddStudent/AddStudent';
 import reportWebVitals from './reportWebVitals';
 import 'styled-components';
 import { DefaultTheme, ThemeProvider } from 'styled-components';
