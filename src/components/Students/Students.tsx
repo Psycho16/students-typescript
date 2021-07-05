@@ -69,7 +69,7 @@ const Students: React.FC<students> = ({
   const rusGroup: string = getRusGroup(group, rusGroups, specialties);
   const age: number = getAgeFromBirthday(birthday);
   const layoutColor: string = layoutColors[color];
-  const ageWord = fixAgeWord(age);
+  const ageWord: string = fixAgeWord(age);
 
   return (
     <StudentWrapper>
