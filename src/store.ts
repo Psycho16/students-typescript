@@ -19,13 +19,11 @@ export const deleteStudent = (students: student[], id: number) => {
 };
 
 export const filterStudents = (students: student[], input: string) => {
-  return students
-    .slice(0)
-    .filter((student) => student.name.toLowerCase().includes(input.toLowerCase()));
+  return students.filter((student) => student.name.toLowerCase().includes(input.toLowerCase()));
 };
 
 export const sortStudents = (students: student[], sortType: string) => {
-  return students.slice(0).sort((a, b) => sortBy(a, b, sortType));
+  return students.sort((a, b) => sortBy(a, b, sortType));
 };
 
 class Store {
