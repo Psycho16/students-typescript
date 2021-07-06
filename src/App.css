@@ -29,3 +29,6 @@
 body {
   font-family: 'Geometria';
 }
+.router-link {
+  text-decoration: none;
+}
