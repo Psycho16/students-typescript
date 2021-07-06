@@ -5,7 +5,7 @@ export const AppTitle = styled.h1`
   font-weight: bold;
   font-size: 40px;
   line-height: 50px;
-  margin-bottom: 47px;
+  /* margin-bottom: 47px; */
   @media ${(props) => props.theme.media.medium} {
     font-size: 35px;
     margin-bottom: 30px;
@@ -20,6 +20,12 @@ export const AppTitle = styled.h1`
     line-height: 38px;
     margin-bottom: 22px;
   }
+`;
+export const TitleContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 47px;
 `;
 export const MainContent = styled.div`
   padding: 0 130px;

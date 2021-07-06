@@ -1,9 +1,11 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 import store from '../../store';
+import { Link } from 'react-router-dom';
 
 import {
   AppTitle,
+  TitleContent,
   MainContent,
   MainStudentsWrapper,
   StudentWrapper,
@@ -14,7 +16,7 @@ import {
   StudentRating,
 } from './StyledApp';
 
-import { Students, Search } from '../../components';
+import { Students, Search, Button } from '../../components';
 import { onLoadStudents } from '../../functions/getData';
 
 const Page: React.FC = () => {
@@ -24,7 +26,14 @@ const Page: React.FC = () => {
 
   return (
     <MainContent>
-      <AppTitle>Студенты</AppTitle>
+      <TitleContent>
+        <AppTitle>Студенты</AppTitle>
+        <Link to="/AddStudent" className="router-link">
+          <Button buttonText="Добавить студента" needsvg={true} />
+        </Link>
+      </TitleContent>
+      {/* <AppTitle>Студенты</AppTitle>
+      <Button /> */}
       <Search />
       <StudentWrapper>
         <StudentName>ФИО</StudentName>

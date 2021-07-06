@@ -5,3 +5,4 @@ export { default as SearchForm } from './SearchForm/SearchForm';
 export { default as Students } from './Students/Students';
 export { default as CustomTextInput } from './CustomTextInput/CustomTextInput';
 export { default as CustomPopupInput } from './CustomPopupInput/CustomPopupInput';
+export { default as Button } from './Button/Button';
