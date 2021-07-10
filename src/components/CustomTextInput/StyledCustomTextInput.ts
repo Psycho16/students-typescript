@@ -3,6 +3,7 @@ export const InputWrapper = styled.div`
   min-width: 380px;
   width: 380px;
   height: 76px;
+  margin-bottom: 20px;
 `;
 
 export const InputTitle = styled.h2`
