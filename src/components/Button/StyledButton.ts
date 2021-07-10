@@ -3,22 +3,25 @@ import styled from 'styled-components';
 export const ButtonWrapper = styled.button`
   min-width: 340px;
   height: 50px;
-  background: #49c2e8;
   display: flex;
   align-items: center;
   border-radius: 10px;
   border: none;
   outline: none;
   color: #ffffff;
+  background: #49c2e8;
   font-weight: bold;
   font-size: 16px;
   line-height: 20px;
-  padding-left: 110px;
-  padding-top: 18px;
-  padding-right: 60px;
-  padding-bottom: 16px;
+  padding: 18px 60px 16px 110px;
   position: relative;
+  cursor: pointer;
+  transition: 300ms;
+  :hover {
+    background: #65accc;
+  }
 `;
+
 export const HelpSvg = styled.img`
   position: absolute;
   height: 17px;
