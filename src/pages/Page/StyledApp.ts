@@ -31,17 +31,21 @@ export const MainContent = styled.div`
   padding: 0 130px;
   width: 1440px;
   margin: 0 auto;
+  margin-top: 75px;
   @media ${(props) => props.theme.media.medium} {
     width: 1000px;
     padding: 0px 54px;
+    margin-top: 62px;
   }
   @media ${(props) => props.theme.media.small} {
     width: 600px;
     padding: 0px 28px;
+    margin-top: 52px;
   }
   @media ${(props) => props.theme.media.phone} {
     width: auto;
     padding: 0 20px;
+    margin-top: 39px;
   }
 `;
 export const MainStudentsWrapper = styled.div`
