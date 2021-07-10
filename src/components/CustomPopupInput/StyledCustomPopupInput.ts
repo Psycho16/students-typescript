@@ -3,6 +3,7 @@ export const InputPopupWrapper = styled.div`
   min-width: 380px;
   width: 380px;
   height: 76px;
+  margin-bottom: 20px;
 `;
 
 export const InputTitle = styled.h2`
@@ -45,11 +46,11 @@ export const Popup = styled.div`
   background: #ffffff;
   box-shadow: 0px 5px 15px rgb(0 0 0 / 9%);
   border-radius: 10px;
-  overflow: hidden;
   width: 100%;
   text-align: start;
   padding-top: 5px;
   margin-top: 6px;
+  z-index: 1;
   @media ${(props) => props.theme.media.phone} {
     top: 36%;
     left: 10%;
@@ -74,7 +75,7 @@ export const PopupUl = styled.ul`
   }
 `;
 export const PopupLi = styled.li`
-  width: 169px;
+  width: 96%;
   height: 35px;
   margin: 0 auto;
   margin-bottom: 4px;
@@ -83,6 +84,9 @@ export const PopupLi = styled.li`
   font-size: 12px;
   line-height: 15px;
   list-style-type: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   :active,
   :hover {
     background: rgba(73, 194, 232, 0.5);
