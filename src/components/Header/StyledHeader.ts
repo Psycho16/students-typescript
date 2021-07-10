@@ -16,18 +16,14 @@ export const SpanBy = styled.span`
 export const HeaderContainer = styled.div`
   background: #ffffff;
   box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
-  margin-bottom: 75px;
   padding: 22px 0;
   @media ${(props) => props.theme.media.medium} {
-    margin-bottom: 62px;
     padding: 18px 0;
   }
   @media ${(props) => props.theme.media.small} {
-    margin-bottom: 52px;
     padding: 15px 0;
   }
   @media ${(props) => props.theme.media.phone} {
-    margin-bottom: 39px;
     padding: 22px 30px;
   }
 `;
