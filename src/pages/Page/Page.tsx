@@ -32,8 +32,6 @@ const Page: React.FC = () => {
           <Button buttonText="Добавить студента" needsvg={true} />
         </Link>
       </TitleContent>
-      {/* <AppTitle>Студенты</AppTitle>
-      <Button /> */}
       <Search />
       <StudentWrapper>
         <StudentName>ФИО</StudentName>
