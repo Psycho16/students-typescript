@@ -1,6 +1,17 @@
 import React from 'react';
 import { CustomTextInput, CustomPopupInput } from '../../components';
-import { MainContent, BackToPage, PageTitle, InputsWrapper } from '../AddStudent/StyledAddStudent';
+import {
+  MainContent,
+  BackToPage,
+  PageTitle,
+  InputsWrapper,
+  AddImageButton,
+  AddImage,
+  AddImageText,
+  AddImageTitle,
+  AddImageSubtitle,
+  CreateButton,
+} from '../AddStudent/StyledAddStudent';
 
 import { Link } from 'react-router-dom';
 
@@ -11,6 +22,13 @@ const AddStudent: React.FC = () => {
         <BackToPage>назад к списку студентов</BackToPage>
       </Link>
       <PageTitle>Новый студент</PageTitle>
+      <AddImageButton>
+        <AddImage></AddImage>
+        <AddImageText>
+          <AddImageTitle>Сменить аватар</AddImageTitle>
+          <AddImageSubtitle>500x500</AddImageSubtitle>
+        </AddImageText>
+      </AddImageButton>
       <InputsWrapper>
         <CustomTextInput property="ФИО" placeholder="Иванов Иван Иванович" />
         <CustomTextInput property="Email" placeholder="ivanov@gmail.com" />
@@ -44,6 +62,7 @@ const AddStudent: React.FC = () => {
           items={['синий', 'красный', 'зеленый', 'желтый', 'черный', 'оранжевый', 'радужный']}
         ></CustomPopupInput>
       </InputsWrapper>
+      <CreateButton>Создать</CreateButton>
     </MainContent>
   );
 };
