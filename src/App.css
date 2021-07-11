@@ -36,3 +36,8 @@ body {
   border: none;
   outline: none;
 }
+@media (max-width: 600px) {
+  .router-link {
+    width: 100%;
+  }
+}
