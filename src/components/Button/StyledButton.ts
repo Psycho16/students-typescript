@@ -20,6 +20,16 @@ export const ButtonWrapper = styled.button`
   :hover {
     background: #65accc;
   }
+  @media ${(props) => props.theme.media.small} {
+    max-width: 252px;
+    min-width: 252px;
+    padding: 18px 8px 16px 34px;
+  }
+  @media ${(props) => props.theme.media.phone} {
+    max-width: 600px;
+    min-width: 335px;
+    width: 100%;
+  }
 `;
 
 export const HelpSvg = styled.img`
@@ -29,6 +39,11 @@ export const HelpSvg = styled.img`
   left: 75px;
   right: 245px;
   top: calc(50% - 17px / 2);
+  @media ${(props) => props.theme.media.small} {
+    height: 15px;
+    width: 15px;
+    left: 31px;
+  }
 `;
 export const ButtonSpan = styled.span`
   width: 100%;
