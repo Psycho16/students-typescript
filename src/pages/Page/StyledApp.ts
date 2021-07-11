@@ -8,11 +8,9 @@ export const AppTitle = styled.h1`
   /* margin-bottom: 47px; */
   @media ${(props) => props.theme.media.medium} {
     font-size: 35px;
-    margin-bottom: 30px;
   }
   @media ${(props) => props.theme.media.small} {
     font-size: 30px;
-    margin-bottom: 30px;
   }
   @media ${(props) => props.theme.media.phone} {
     font-weight: bold;
@@ -23,9 +21,12 @@ export const AppTitle = styled.h1`
 `;
 export const TitleContent = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 47px;
+  @media ${(props) => props.theme.media.phone} {
+    flex-direction: column;
+  }
 `;
 export const MainContent = styled.div`
   padding: 0 130px;
